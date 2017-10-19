@@ -94,20 +94,27 @@ insert into project values('Computerization', 10, 'Stafford', 4);
 insert into project values('Reorganization', 20, 'Houston', 1);
 insert into project values('Newbenefits', 30, 'Stafford', 4);
 
---Add referential integrity
+--referential integrity
 alter table employee
-    add foreign key (dno) references department(dnumber)
-    add foreign key (super_ssn) references employee(ssn);
+    add (constraint fk_1
+    foreign key (dno) references department(dnumber),
+    constraint fk_2
+    foreign key (super_ssn) references employee(ssn));
 
 alter table department
-    add foreign key (mgr_ssn) references employee(ssn);
+    add constraint fk_3
+    foreign key (mgr_ssn) references employee(ssn);
 
 alter table dept_locations
-    add foreign key (dnumber) references department(dnumber);
+    add constraint fk_4
+    foreign key (dnumber) references department(dnumber);
 
 alter table project
-    add foreign key (dnum) references department(dnumber);
+    add constraint fk_5
+    foreign key (dnum) references department(dnumber);
 
 alter table works_on
-    add foreign key (essn) references employee(ssn)
-    add foreign key (pno) references project(pnumber);
+    add (constraint fk_6
+    foreign key (essn) references employee(ssn),
+    constraint fk_7
+    foreign key (pno) references project(pnumber));
