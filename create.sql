@@ -1,5 +1,6 @@
 /* This script makes the tables for the Company and populates them.
 * Dr. Fries COSC 341
+* Assignment 3
 * Author: Nathaniel Churchill
 *
 */
