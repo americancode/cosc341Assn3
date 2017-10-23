@@ -26,7 +26,8 @@ select fname, lname from employee, works_on
 
 pause Query 5, Employees supervised by Franklin Wong;
 select fname, lname from employee
-    where super_ssn = 333445555;
+    where super_ssn in (select ssn from employee
+        where fname = 'Franklin' and lname = 'Wong');
 
 pause Query 6, Employees in a dept in Houston;
 select fname, lname from employee, dept_locations
