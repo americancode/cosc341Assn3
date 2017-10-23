@@ -1,0 +1,93 @@
+SQL> @query
+Query 1, All employees in dept 5
+
+
+FNAME                     LNAME
+------------------------- -------------------------
+John                      Smith
+Franklin                  Wong
+Ramesh                    Narayan
+Joyce                     English
+
+Query 2, Name and department name of all employees
+
+
+FNAME                     LNAME                     DNAME
+------------------------- ------------------------- -------------------------
+John                      Smith                     Research
+Franklin                  Wong                      Research
+Alicia                    Zelaya                    Administration
+Jennifer                  Wallace                   Administration
+Ramesh                    Narayan                   Research
+Joyce                     English                   Research
+Ahmad                     Jabbar                    Administration
+James                     Borg                      Headquarters
+
+8 rows selected.
+
+Query 3, Name and department name by department
+
+
+FNAME                     LNAME                     DNAME
+------------------------- ------------------------- -------------------------
+Jennifer                  Wallace                   Administration
+Ahmad                     Jabbar                    Administration
+Alicia                    Zelaya                    Administration
+James                     Borg                      Headquarters
+Ramesh                    Narayan                   Research
+Joyce                     English                   Research
+Franklin                  Wong                      Research
+John                      Smith                     Research
+
+8 rows selected.
+
+Query 4, Employees in dept 5 with 10 or more hours on ProductX
+
+
+FNAME                     LNAME
+------------------------- -------------------------
+John                      Smith
+Joyce                     English
+
+Query 5, Employees supervised by Franklin Wong
+
+
+FNAME                     LNAME
+------------------------- -------------------------
+John                      Smith
+Ramesh                    Narayan
+Joyce                     English
+
+Query 6, Employees in a dept in Houston
+
+
+FNAME                     LNAME
+------------------------- -------------------------
+John                      Smith
+Franklin                  Wong
+Ramesh                    Narayan
+Joyce                     English
+James                     Borg
+
+Query 7, Per project, list name and total hours per week
+
+
+PNAME                     SUM(WORKS_ON.HOURS)
+------------------------- -------------------
+Computerization                            55
+ProductZ                                   50
+ProductY                                 37.5
+ProductX                                 52.5
+Reorganization                             25
+Newbenefits                                55
+
+6 rows selected.
+
+Query 8, For each department, list name and average salary
+
+
+DNAME                     AVG(EMPLOYEE.SALARY)
+------------------------- --------------------
+Research                                 33250
+Administration                           31000
+Headquarters                             55000
